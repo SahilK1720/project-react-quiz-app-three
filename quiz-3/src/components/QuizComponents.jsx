@@ -23,13 +23,13 @@ function QuizComponent() {
 
   const handleOption = (e) => {
     if (e.target.innerText === questions[num].answer) {
-      alert('Correct answer');
+      alert("Correct answer");
       if (!attempted.includes(num)) {
         setAttempted((prevAttempted) => [...prevAttempted, num]);
         setScore((prevScore) => prevScore + 1);
       }
     } else {
-      alert('Incorrect answer');
+      alert("Incorrect answer");
       if (!attempted.includes(num)) {
         setAttempted((prevAttempted) => [...prevAttempted, num]);
       }
@@ -37,7 +37,7 @@ function QuizComponent() {
   };
 
   const handleFinish = () => {
-    navigate('/Result', { state: { score, attempted } });
+    navigate("/Result", { state: { score, attempted } });
   };
 
   const handleQuit = () => {
@@ -47,57 +47,59 @@ function QuizComponent() {
   };
 
   return (
-    <div className='quiz-container'>
-      <div className='question-text'>
+    <div className="quiz-container">
+      <div className="question-text">
         <h2>Question</h2>
       </div>
-      <div className='page'>
+      <div className="page">
         <h4>{num + 1} of 15</h4>
       </div>
-      <div className='question'>
+      <div className="question">
         <h3>{questions[num].question}</h3>
       </div>
-      <div className='options'>
-        <div className='option-1'>
-          <button className='opt-btn' onClick={handleOption}>
+      <div className="options">
+        <div className="option-1">
+          <button className="opt-btn" onClick={handleOption}>
             {questions[num].optionA}
           </button>
         </div>
-        <div className='option-2'>
-          <button className='opt-btn' onClick={handleOption}>
+        <div className="option-2">
+          <button className="opt-btn" onClick={handleOption}>
             {questions[num].optionB}
           </button>
         </div>
-        <div className='option-3'>
-          <button className='opt-btn' onClick={handleOption}>
+        <div className="option-3">
+          <button className="opt-btn" onClick={handleOption}>
             {questions[num].optionC}
           </button>
         </div>
-        <div className='option-4'>
-          <button className='opt-btn' onClick={handleOption}>
+        <div className="option-4">
+          <button className="opt-btn" onClick={handleOption}>
             {questions[num].optionD}
           </button>
         </div>
       </div>
-      <div className='actions'>
-        <div className='prev'>
-          <button className='prev-btn' onClick={handlePrevious}>
+      <div className="actions">
+        <div className="prev">
+          <button className="prev-btn" onClick={handlePrevious}>
             Previous
           </button>
         </div>
-        <div className='next'>
-          <button className='next-btn' onClick={handleNext}>
+        <div className="next">
+          <button className="next-btn" onClick={handleNext}>
             Next
           </button>
         </div>
-        <div className='quit'>
-          <button className='quit-btn' onClick={handleQuit}>
+        <div className="quit">
+          <button className="quit-btn" onClick={handleQuit}>
             Quit
           </button>
         </div>
-        <button className='finish-btn' onClick={handleFinish}>
-          Finish
-        </button>
+        <div className="finish">
+          <button className="finish-btn" onClick={handleFinish}>
+            Finish
+          </button>
+        </div>
       </div>
     </div>
   );
